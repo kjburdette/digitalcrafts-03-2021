@@ -1,7 +1,10 @@
 #Basic Math Calculator
+#Welcome Message
+print("Welcome to the Basic Calculator!")
+
 numberOne = int(input("Please enter a whole number: "))
 
-print("Please select an operation:\n"
+print("List of operations:\n"
         "1. Add\n"
         "2. Subtract\n"
         "3. Multiply\n"
