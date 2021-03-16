@@ -60,9 +60,9 @@ def characterCreation():
         "What is your class? Choose exactly ((k)Knight, (g)Goblin, (h)Hero)"
 
     if charClass == "h":
-        chracter = Hero(charName, 10)
+        character = Hero(charName, 10)
     elif charClass == "g":
-        caracter = Goblin(charName, 10)
+        character = Goblin(charName, 10)
     elif charClass == "k":
         character = Knight(charName, 10)
     else:
