@@ -1,18 +1,18 @@
 # You have two characters, a Hero and a Goblin
 # your goal is to let them fight, whoever wins, will be printed out in a victory message
-#whoever is defeated can be printed out in that message as well
+# whoever is defeated can be printed out in that message as well
 
-#human
+# human
 #     name
 #     attack
-#     defense 
-#     hp 
+#     defense
+#     hp
 
 # #Goblin
-#     name 
-#     attack 
-#     defense 
-#     hp 
+#     name
+#     attack
+#     defense
+#     hp
 #     clan
 
 class Hero:
@@ -51,8 +51,10 @@ def HeroAttacksGoblin(hero, goblin):
     print(f"{goblin.name} takes 5 damage")
     print(f"{goblin.name} has {goblin.hp} left")
 
+
 def victoryMessage(hero, goblin):
     print(f"{hero.name} is the victor and they have slain {goblin.name} ")
+
 
 def characterCreation():
     charName = input("What is your name?")
@@ -60,19 +62,19 @@ def characterCreation():
         "What is your class? Choose exactly ((k)Knight, (g)Goblin, (h)Hero)"
 
     if charClass == "h":
-        character = Hero(charName, 10)
+        character=Hero(charName, 10)
     elif charClass == "g":
-        character = Goblin(charName, 10)
+        character=Goblin(charName, 10)
     elif charClass == "k":
-        character = Knight(charName, 10)
+        character=Knight(charName, 10)
     else:
         print("Please follow my rules and enter a valid choice.")
     return character
 
 
-bob = Goblin("Bob", 10)
-kendall = Hero("Kendall", 10)
-tyler = Knight("Tyler", 10)
+bob=Goblin("Bob", 10)
+kendall=Hero("Kendall", 10)
+tyler=Knight("Tyler", 10)
 
 # print("the name of this character", bob.name)
 # print("the name of this character", kendall.name)
@@ -81,11 +83,13 @@ tyler = Knight("Tyler", 10)
 # Kendall to punch bob the goblin, simulate attacking another character
 # you take 5 damage to your health
 
-#I ask the user to type in their name
+# I ask the user to type in their name
 # I give them hp values
 # I print out their hp values
 # I then set a global variable to be the while loop condition
 
-while bob.hp > 0:   
+while bob.hp > 0:
     HeroAttacksGoblin(kendall, bob)
-    if 
+    if
+
+# pip
