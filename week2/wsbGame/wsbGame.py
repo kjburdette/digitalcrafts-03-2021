@@ -188,6 +188,62 @@ def fightHedgies():
             print("\nLets try putting in a better option.\n")
 
 
+def fightMelvin():
+    print("\nIt's finally time! Take a deep breath.")
+    time.sleep(2)
+    print("...")
+    time.sleep(1)
+    print("Melvin bursts through the trade floor and hisses loudly!\n"
+          "\nThe gainssss are all mine " + str(hero.name) + "!! BE GONE!!\n"
+          )
+    fightOption = ''
+    while (python.maxhp > 0 and hero.maxhp > 0 and fightOption != "3"):
+        fightOption = input("You have "+str(hero.maxhp)+" HP and "+str(hero.attack)+" AP.\n"
+                            "Melvin the Python has " +
+                            str(python.maxhp)+" HP and " +
+                            str(python.attack)+" AP.\n\n"
+                            "What would you like to do?\n"
+                            "1. Attack\n"
+                            "2. Do nothing\n"
+                            "3. Flee\n\n> ")
+        if fightOption == "1":
+            heroAttack = randrange(6, hero.attack+1)
+            pythonAttack = randrange(75, python.attack+1)
+            python.maxhp -= heroAttack
+            hero.maxhp -= pythonAttack
+            print("\nBAZINGA!\n")
+            time.sleep(1)
+            print("\nYou struck Melvin for "+str(heroAttack)+" HP.\n"
+                  "He slices you back for "+str(pythonAttack)+" HP.\n")
+            # if (hedgie.maxhp <= 0 or hero.maxhp <= 0):
+            #     if (hedgie.maxhp <= 0):
+            #         earnings = randrange(3, 5)
+            #         hero.wallet += earnings
+            #         print("\nVictory!! You pwned the hedgie and added " +
+            #               str(earnings)+" DOGEcoin to your wallet!\n")
+            #         continue
+            #     else:
+            #         break
+        elif fightOption == "2":
+            if (python.maxhp > 0 and hero.maxhp > 0):
+                pythonAttack = randrange(75, python.attack+1)
+                hero.maxhp -= pythonAttack
+                print("\nYou can't keep sleeping bro! Get in there and fight!\n")
+                time.sleep(2)
+                print("\nMelvin chuckles at your weak portfolio and smashes for " +
+                      str(pythonAttack)+" damage.\n")
+                if (hero.maxhp <= 0):
+                    break
+        elif fightOption == "3":
+            print("\nLet's get out of here!\n")
+            time.sleep(2)
+            print(
+                "\nYou're lucky you escaped this time. Come back when you've become stronger.\n")
+            continue
+        else:
+            print("\nThat's not gonna work. Try a different option.\n")
+
+
 python = Boss()
 
 welcomeMessage()
