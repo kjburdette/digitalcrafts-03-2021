@@ -21,7 +21,7 @@ class Hero:
 class Minion:
     def __init__(self):
         self.name = "Hedgie"
-        self.maxhp = 10
+        self.maxhp = 15
         self.attack = 3
 
 
@@ -37,7 +37,7 @@ class Boss:
 
 def welcomeMessage():
     print("\n\nWelcome to WSB Python Slayer!\n\n"
-          """       >---==
+          """                    >---==
                          ==
                         =
                        ==
@@ -57,7 +57,9 @@ def createHero():
 
 def mainMenu():
     adventureOption = input(
-        "\nChoose an option "+hero.name+":\n"
+        "\nHP: " + str(hero.maxhp) + " AP: " + str(hero.attack) +
+        " DOGE: " + str(hero.wallet) + "\n"
+        "Choose an option "+hero.name+":\n"
         "1. Go to the store.\n"
         "2. Fight some hedgies.\n"
         "3. Slay Melvin! (not for n00bs)\n"
@@ -104,7 +106,7 @@ def store():
             if(hero.wallet >= 20):
                 hero.attack *= 50
                 hero.wallet -= 20
-                print("\nYour hands harden into diamonds for DFV increasing your Attack Power by " +
+                print("\nYour hands harden into diamonds for DFV increasing your Attack Power to " +
                       str(hero.attack) + "!!!\n")
             else:
                 print(
@@ -112,7 +114,7 @@ def store():
         elif (itemPurchased == "3"):
             if(hero.wallet >= 15):
                 hero.maxhp += 300
-                hero.wallet -= 20
+                hero.wallet -= 15
                 print("\nYou don the suit of Steve Jobs himself. Lookin snazzy 8)! Your HP is now " +
                       str(hero.maxhp) + "!!!\n")
             else:
@@ -128,7 +130,6 @@ def store():
 
 def fightHedgies():
     print("\nWalking down Wallstreet...")
-    time.sleep(2)
     print("...")
     time.sleep(1)
     print("Hedgie spotted! Lets get to pwning!\n")
@@ -151,10 +152,10 @@ def fightHedgies():
             print("\nPOW!\n")
             time.sleep(1)
             print("\nYou struck the hedgie for "+str(heroAttack)+" HP.\n"
-                  "The Hedgie minion has struck you for "+str(hedgieAttack)+" HP.\n")
+                  "The Hedgie minion has struck you for "+str(hedgieAttack)+" HP.")
             if (hedgie.maxhp <= 0 or hero.maxhp <= 0):
                 if (hedgie.maxhp <= 0):
-                    earnings = randrange(3, 5)
+                    earnings = randrange(2, 5)
                     hero.wallet += earnings
                     print("\nVictory!! You pwned the hedgie and added " +
                           str(earnings)+" DOGEcoin to your wallet!\n")
@@ -168,7 +169,7 @@ def fightHedgies():
                 print("\nZZzzZZ!\n")
                 time.sleep(2)
                 print("\nYou slept on the gains and got hit for " +
-                      str(hedgieAttack)+" damage :(.\n")
+                      str(hedgieAttack)+" damage. :(\n")
                 if (hero.maxhp <= 0):
                     break
         # elif hedgie.maxhp <= 0:
@@ -215,15 +216,9 @@ def fightMelvin():
             time.sleep(1)
             print("\nYou struck Melvin for "+str(heroAttack)+" HP.\n"
                   "He slices you back for "+str(pythonAttack)+" HP.\n")
-            # if (hedgie.maxhp <= 0 or hero.maxhp <= 0):
-            #     if (hedgie.maxhp <= 0):
-            #         earnings = randrange(3, 5)
-            #         hero.wallet += earnings
-            #         print("\nVictory!! You pwned the hedgie and added " +
-            #               str(earnings)+" DOGEcoin to your wallet!\n")
-            #         continue
-            #     else:
-            #         break
+            if (python.maxhp <= 0 or hero.maxhp <= 0):
+                break
+
         elif fightOption == "2":
             if (python.maxhp > 0 and hero.maxhp > 0):
                 pythonAttack = randrange(75, python.attack+1)
@@ -231,10 +226,11 @@ def fightMelvin():
                 print("\nYou can't keep sleeping bro! Get in there and fight!\n")
                 time.sleep(2)
                 print("\nMelvin chuckles at your weak portfolio and smashes for " +
-                      str(pythonAttack)+" damage.\n")
+                      str(pythonAttack)+" damage!\n")
                 if (hero.maxhp <= 0):
                     break
         elif fightOption == "3":
+            python.maxhp = 500
             print("\nLet's get out of here!\n")
             time.sleep(2)
             print(
@@ -244,15 +240,36 @@ def fightMelvin():
             print("\nThat's not gonna work. Try a different option.\n")
 
 
+def restart():
+    choice = ""
+    while choice != "y" and choice != "q":
+        choice = input("\nWould you like to restart? y or n\n> ")
+        if choice == "y":
+            hero.maxhp = 100
+            hero.attack = 20
+            hero.wallet = 0
+            python.maxhp = 500
+            choice = "y"
+        elif choice == "n":
+            choice = "q"
+        else:
+            print("\n>>Invalid option. Try again.<<\n")
+    return choice
+
+
 python = Boss()
 
 welcomeMessage()
 hero = createHero()
 # print("Name: " + hero.name)
 # ()
-choice = ''
-while (choice != "q" and hero.maxhp > 0):
+choice = ""
+while (choice != "q" and hero.maxhp > 0 and python.maxhp > 0):
     choice = mainMenu()
     if hero.maxhp <= 0:
-        print("You got shorted into oblivion and you lost too much HP. Better luck next time kid!")
-        break
+        print("\nYou got shorted into oblivion and you lost too much HP. Better luck next time kid!\n")
+        choice = restart()
+    elif python.maxhp <= 0:
+        print("\nCongrats my dude! You slayed Melvin and released all the shorts!!\n"
+              "$GME has safely landed on the moon at $1Million price per share!!\n")
+        choice = restart()
