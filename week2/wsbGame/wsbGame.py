@@ -258,9 +258,9 @@ def restart():
 
 
 python = Boss()
+hero = createHero()
 
 welcomeMessage()
-hero = createHero()
 # print("Name: " + hero.name)
 # ()
 choice = ""
