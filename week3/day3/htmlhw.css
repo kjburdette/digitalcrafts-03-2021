@@ -1,0 +1,29 @@
+h1 {
+  font-family: "Martel", serif;
+  text-align: center;
+  background-color: lightslategrey;
+  height: 50px;
+  width: 100%;
+  border: 5px solid black;
+}
+
+html {
+  background-color: rgb(55, 108, 168);
+}
+
+.profile-picture {
+  display: flex;
+  justify-content: center;
+}
+
+.places-ive-visited {
+  display: flex;
+  justify-content: center;
+  text-align: bottom center;
+}
+
+.about-me {
+  font-family: "Martel", serif;
+  text-align: center;
+  font-size: large;
+}
