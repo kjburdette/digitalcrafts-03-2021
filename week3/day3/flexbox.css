@@ -1,0 +1,18 @@
+.basic-flex {
+  display: flex;
+}
+
+.basic-flex-direction {
+  display: flex;
+  flex-direction: column;
+}
+
+.basic-flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.basic-flex-justify-content {
+  display: flex;
+  justify-content: center;
+}
