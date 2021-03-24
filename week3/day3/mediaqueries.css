@@ -1,0 +1,27 @@
+/* What is a media quiery */
+/* Media query is like a condition/if statement, it will trigger when certain things have happened on our webpage */
+* {
+  box-sizing: border-box;
+}
+
+.navbar {
+  /* height: 40px; */
+  background-color: grey;
+  overflow: hidden;
+}
+
+.navbar a {
+  display: block;
+  text-align: center;
+  float: left;
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 650px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
