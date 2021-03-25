@@ -1,0 +1,102 @@
+/* font-family: 'Bangers', cursive; */
+:root {
+  --main-radius: 5px;
+  --main-padding: 5px;
+}
+
+body {
+  background-color: darkcyan;
+  font-family: "Bangers", cursive;
+}
+
+.main-container {
+  display: grid;
+  height: 100vh;
+  /* template */
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 1.5fr 1.2fr 0.8fr;
+  grid-template-areas:
+    "nav nav nav nav"
+    "sidebar main main main"
+    "sidebar content1 content2 content3"
+    "sidebar footer footer footer";
+  grid-gap: 0.2rem;
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: 18px;
+  color: black;
+  text-align: center;
+}
+
+nav {
+  grid-area: nav;
+  background-color: #dbf5f0;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+footer {
+  grid-area: footer;
+  background-color: #0c6170;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+main {
+  grid-area: main;
+  background-color: #0c6170;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+#content-div-1 {
+  grid-area: content1;
+  background-color: #37beb0;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#content-div-2 {
+  grid-area: content2;
+  background-color: #dbf5f0;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#content-div-3 {
+  grid-area: content3;
+  background-color: #37beb0;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#sidebar {
+  grid-area: sidebar;
+  background-color: #a4e5e0;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+@media only screen and (max-width: 550px) {
+  .main-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr;
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas:
+      "nav"
+      "sidebar"
+      "main"
+      "content1"
+      "content2"
+      "content3"
+      "footer";
+  }
+}
+
+/* Baby Blue
+/* #DBF5F0 */
+/* Tiffany Blue */
+/* #A4E5E0 */
+/* Blue Green */
+/* #37BEB0 */
+/* Midnight Blue */
+/* #0C6170  */
