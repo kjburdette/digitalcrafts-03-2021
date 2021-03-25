@@ -1,0 +1,82 @@
+.assignment-1 {
+  display: grid;
+  /* height: 120px;
+  width: 60px; */
+  grid-template-columns: 120px 120px 120px;
+  grid-template-rows: 60px 60px;
+  grid-template-areas:
+    "nav main content3"
+    "sidebar content1 content2";
+  grid-gap: 5px;
+}
+
+nav {
+  grid-area: nav;
+  background-color: burlywood;
+}
+
+main {
+  grid-area: main;
+  background-color: crimson;
+}
+
+#sidebar {
+  grid-area: sidebar;
+  background-color: darkkhaki;
+}
+
+#content-div-1 {
+  grid-area: content1;
+  background-color: darkolivegreen;
+}
+
+#content-div-2 {
+  grid-area: content2;
+  background-color: darkslategray;
+}
+
+#content-div-3 {
+  grid-area: content3;
+  background-color: firebrick;
+}
+
+.assignment-2 {
+  display: grid;
+  grid-template-columns: repeat(5, 50px);
+  grid-template-rows: 40px;
+  grid-template-areas:
+    "box1 box2 box3 box4 box5"
+    "box6 box7 box8 box9 box10";
+}
+
+#box1 {
+  background-color: forestgreen;
+}
+
+#box2 {
+  background-color: goldenrod;
+}
+#box3 {
+  background-color: rgb(66, 32, 218);
+}
+#box4 {
+  background-color: greenyellow;
+}
+#box5 {
+  background-color: khaki;
+}
+#box6 {
+  background-color: rgb(31, 150, 100);
+}
+#box7 {
+  background-color: rgb(17, 134, 75);
+}
+#box8 {
+  background-color: rgb(218, 32, 134);
+}
+#box9 {
+  background-color: rgb(85, 218, 32);
+}
+#box10 {
+  background-color: rgb(223, 5, 5);
+}
