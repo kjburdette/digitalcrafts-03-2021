@@ -1,0 +1,67 @@
+/* font-family: 'Orbitron', sans-serif; */
+
+.main-container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 0.2fr 1fr 0.2fr 1fr 0.2fr 3fr;
+  grid-template-areas:
+    "name name name"
+    "pic1 pic1 pic1"
+    "plc plc plc"
+    "pic2 pic3 pic4"
+    "abt abt abt"
+    "txt txt txt";
+  justify-items: center;
+  font-size: 20px;
+}
+
+body {
+  font-family: "Orbitron", sans-serif;
+  background-color: steelblue;
+}
+
+#name {
+  grid-area: name;
+  text-align: center;
+  background-color: steelblue;
+}
+
+#pic1 {
+  grid-area: pic1;
+  justify-content: center;
+  background-color: steelblue;
+}
+
+#places {
+  grid-area: plc;
+  text-align: center;
+  background-color: steelblue;
+}
+
+#japan {
+  grid-area: pic2;
+  background-color: steelblue;
+}
+
+#italy {
+  grid-area: pic3;
+  background-color: steelblue;
+}
+
+#korea {
+  grid-area: pic4;
+  background-color: steelblue;
+}
+
+#about {
+  grid-area: abt;
+  text-align: center;
+  background-color: steelblue;
+}
+
+#info {
+  grid-area: txt;
+  text-align: center;
+  background-color: steelblue;
+}
