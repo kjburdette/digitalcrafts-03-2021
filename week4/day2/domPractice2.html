@@ -8,25 +8,29 @@
 </head>
 <body>
     <div class="main-container">
-        <h1 class="header">Dom Practice 2</h1>
+        <h1 class="header">Dom practice 2</h1>
         <label for="number">Number</label>
-        <input onchange="displayValue()" class="input" name="number">
-        <button onclick="console.log('clicked')" class="button">Submit</button>
+        <input class="input" name="number" type="number">
+         <!-- event handler used to fire a function on click -->
+        <button onclick="displayValue()" class="button">Submit</button>
         <h3>Your number is:</h3>
         <p class="displayNumber"></p>
     </div>
 </body>
 <script>
+    // function fired by the event handler
     function displayValue(){
-        const displayNumber = document.querySelector(".input").value
-        console.log(displayNumber)
+        // .value can be used to grab the value currently residing insidse the element
+        // target the input field to grab the element AND get the value inside the input element
+        const numberTheyEntered = document.querySelector(".input").value
+        // target the paragraph element
+        const paragraphTargeted = document.querySelector(".displayNumber")
+        // change innerText of the element to the number entered
+        paragraphTargeted.innerText = numberTheyEntered
     }
-
-
-
-// .value can be used to grab teh value currently residing inside the element
-// event handlers can be put on certain html elemetns they wil trigger, when an event happens
-// onclick: triggers when it is clicked
-
+    // event handlers can be put on certain html elements
+    // they will trigger, when an event happens
+    // onchange: triggers when something has changed inside the element
+    // onclick: triggers when it is clicked
 </script>
 </html>
