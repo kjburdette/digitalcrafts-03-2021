@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tipCalculator.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Faster+One&display=swap" rel="stylesheet">
+    <title>Tip Calculator</title>
+</head>
+<body>
+    <div class="main-container">
+        <form class="Tip">
+            <h1 class="header">Tip Calculator</h1>
+            <label for="billTotal">Bill Total in $</label>
+            <input name="billTotal" type="number" placeholder="i.e 50" class="firstInput">
+            <br>
+            <br>
+            <label for="tipAmount">Tip Amount in %</label>
+            <input name="tipAmount" type="number" placeholder="i.e 15" class="secondInput">
+            <br>
+            <br>
+            <button type="button" class="button" onclick="tipCalculator()">Calculate Total</button>
+            <br>
+            <h2>Your total with tip is $:</h2>
+            <p class="total"></p>
+            <h2 class="previous">Your previous tips:</h2>
+            <ul class="pastTips"></ul>
+        </form>
+    </div>
+    <!-- <div class="second-container"> -->
+    </div>
+</body>
+<script>
+function tipCalculator(){
+    const bill=Number(document.querySelector(".firstInput").value)
+    const tipPercent=Number(document.querySelector(".secondInput").value)
+    const tipAmount= bill * (tipPercent/100)
+    const addedTip= tipAmount.toFixed(2)
+    const billTotal= bill + tipAmount
+    const total= document.querySelector(".total")
+    total.innerText=billTotal.toFixed(2)
+    const addTips= document.createElement("li")
+    addTips.append(addedTip);
+    const tips = document.querySelector(".pastTips");
+    tips.append(addTips);
+}
+
+</script>
+</html>
