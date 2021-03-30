@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="root">
+    
+</body>
+<script>
+function createDiv(){
+    const newDiv = document.createElement("div")
+    // console.log(newDiv)
+    newDiv.className = "main-container"
+    const newList = document.createElement("ul")
+    const cars = ["BMW","Audi","Honda","Toyota","Ford"]
+    // console.log(newList)
+    cars.forEach(function (car){
+        const li = document.createElement("li");
+        li.textContent = car;
+        newList.appendChild(li);
+    })
+    newDiv.append(newList)
+    const input = document.createElement("input")
+    newDiv.append(input)
+    const radioInput = document.createElement("input")
+    radioInput.setAttribute("type", "radio")
+    newDiv.append(radioInput)
+    const root = document.getElementById("root")
+    root.append(newDiv)
+}
+
+createDiv()
+</script>
+</html>
