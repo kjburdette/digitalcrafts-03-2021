@@ -30,7 +30,6 @@ createDiv()
 function addToList(){
     const userInput = document.querySelector(".task").value
     const list = document.querySelector(".todo")
-    console.log(list)
     const listItem = document.createElement("li")
     const checkbox = document.createElement("input")
     checkbox.className = "checkbox"
