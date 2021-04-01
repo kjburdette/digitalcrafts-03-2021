@@ -43,3 +43,11 @@ const submitBtn = document.querySelector(".submit")
 submitBtn.addEventListener('click', function(){
     addToList()
 })
+
+const enterInpt = document.querySelector(".task")
+
+enterInpt.addEventListener('keydown', function(e){
+    if (e.keyCode === 13){
+        addToList()
+    }
+})

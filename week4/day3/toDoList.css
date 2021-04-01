@@ -3,13 +3,11 @@ body {
   font-size: xx-large;
 }
 
-input:hover {
-  background-color: #eed6d3;
-}
-
+input:hover,
 button:hover {
   background-color: #eed6d3;
 }
+
 .main-container {
   display: flex;
   flex-direction: column;
@@ -23,6 +21,7 @@ button:hover {
   list-style-type: none;
   padding-right: 40px;
   font-size: 2.5rem;
+  margin-top: 0px;
 }
 
 .submit {
@@ -41,7 +40,15 @@ button:hover {
   border-radius: 0.5em;
   margin-top: 20px;
 }
+.task:focus,
+button:focus {
+  outline: none;
+}
 
 .label {
   font-size: 2.5rem;
+}
+
+h2 {
+  margin-bottom: 20px;
 }
