@@ -6,7 +6,7 @@ body {
 
 input:hover,
 button:hover {
-  background-color: #a49393;
+  background-color: #f8ea8c;
 }
 
 .main-container {
@@ -15,7 +15,13 @@ button:hover {
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(to right top, #67595e, #eed6d3, #e8b4b8);
+  background-image: linear-gradient(
+    to right top,
+    #e1c340,
+    #4cd7d0,
+    #a4e8e0,
+    #f8ea8c
+  );
 }
 
 .todo {
