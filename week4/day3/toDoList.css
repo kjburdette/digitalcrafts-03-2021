@@ -39,6 +39,7 @@ button:hover {
   font-size: 2rem;
   text-align: center;
   border-radius: 0.5em;
+  margin-top: 20px;
 }
 
 .label {
