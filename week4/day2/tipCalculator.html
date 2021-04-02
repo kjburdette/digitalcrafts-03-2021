@@ -14,14 +14,14 @@
         <form class="Tip">
             <h1 class="header">Tip Calculator</h1>
             <label for="billTotal">Bill Total in $</label>
-            <input name="billTotal" type="number" placeholder="i.e 50" class="firstInput">
+            <input name="billTotal" type="text" placeholder="i.e 50" class="firstInput">
             <br>
             <br>
             <label for="tipAmount">Tip Amount in %</label>
-            <input name="tipAmount" type="number" placeholder="i.e 15" class="secondInput">
+            <input name="tipAmount" type="text" placeholder="i.e 15" class="secondInput">
             <br>
             <br>
-            <button type="button" class="button" onclick="tipCalculator()">Calculate Total</button>
+            <button type="submit" class="button">Calculate Total</button>
             <br>
             <h2>Your total with tip is $:</h2>
             <p class="total"></p>
@@ -46,6 +46,26 @@ function tipCalculator(){
     const tips = document.querySelector(".pastTips");
     tips.append(addTips);
 }
+
+const form = document.querySelector("form")
+
+const validateNumber = (number) => {
+    myRegex = /^[0-9]+$/;
+    return myRegex.test(number);
+};
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const userInput = document.querySelector(".firstInput");
+    const scndInput = document.querySelector(".secondInput");
+    if (!validateNumber(userInput.value) || !validateNumber(scndInput.value)) {
+        event.preventDefault();
+        alert("Please enter a valid number with no letters.")
+    }
+    else   {
+        tipCalculator()
+    }
+})
 
 </script>
 </html>
