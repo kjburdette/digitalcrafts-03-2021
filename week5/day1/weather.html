@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="weather.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300&display=swap" rel="stylesheet">
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="root">
+        <h1>What's The Weather Like?</h1>
+        <input class="zip" type="text" placeholder="Enter a zip code">
+        <span class="warningText"></span>
+        <button type="button" class="submit">Submit</button>
+        <h3 class="cityName"></h3>
+        <ul class="weather"></ul>
+            <li class="current"></li>
+            <li class="high"></li>
+            <li class="low"></li>
+            <li class="humidity"></li>
+    </div>
+</body>
+<script src="weather.js"></script>
+</html>

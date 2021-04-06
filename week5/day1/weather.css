@@ -1,0 +1,77 @@
+li {
+  list-style-type: none;
+}
+
+body {
+  font-family: "Merriweather", serif;
+  background: url("https://www.kenya.campusfrance.org/sites/pays/files/kenya/new-history-forecast-bulk_0.png")
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+}
+
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 40vh;
+  max-width: 60%;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(255, 255, 255, 0.897),
+    #a8d9f8dc,
+    rgba(255, 255, 255, 0.918)
+  );
+  border-radius: 2em;
+  border: solid black 2px;
+  padding: 10px 40px;
+}
+
+.weather {
+  margin: 4px;
+}
+
+.zip {
+  font-family: "Merriweather", serif;
+  text-align: center;
+  font-size: 1.3rem;
+  border-radius: 1.3rem;
+  padding: 8px;
+  font-style: italic;
+}
+
+.cityName {
+  margin-bottom: 0px;
+  text-decoration: underline;
+}
+
+input:hover,
+button:hover {
+  background-color: #c8f4f959;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+button {
+  font-family: "Merriweather", serif;
+  font-size: 1.1rem;
+  padding: 8px;
+  border-radius: 10px;
+  width: 100px;
+  margin-top: 20px;
+}
+
+.warningText {
+  color: red;
+}
