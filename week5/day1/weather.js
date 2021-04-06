@@ -3,8 +3,10 @@ const getWeatherData = async ()=> {
     if (userInput.length < 5 || !validateNumber(userInput)) {
         let warningText = document.querySelector(".warningText")
         warningText.innerHTML = "Please enter a valid 5-digit zip code."
+    } else if (validateNumber(userInput)) {
         const data = await fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${userInput}&units=imperial&appid=61f08dbce05a9d082a63a4d31c5044ba`)
         const formattedJson  = await data.json()
+        console.log(formattedJson)
         let cityName = document.querySelector(".cityName")
         cityName.innerHTML = `City: ${formattedJson.name}`
         let current = document.querySelector(".current")
