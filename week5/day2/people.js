@@ -1,0 +1,69 @@
+const cardContainer = document.querySelector(".cardContainer")
+// Fetch people function
+const getPeople = async () => {
+    if (cardContainer!=""){
+        cardContainer.innerHTML= ""
+    }
+    const peopleData = await fetch ("https://fakerapi.it/api/v1/persons?_quantity=30")
+    const formattedPeople = await peopleData.json()
+    console.log(formattedPeople)
+    for (let people of formattedPeople.data){
+        const personCard = document.createElement("div");
+        personCard.className = "people"
+        const personName = document.createElement("h3")
+        const personFullName = `${people.firstname} ${people.lastname}`
+        personName.innerHTML = personFullName
+        const personInfo = document.createElement("ul")
+        const birthday = document.createElement("li")
+        birthday.innerHTML = `Birthday: ${people.birthday}`
+        const phoneNumber = document.createElement("li")
+        phoneNumber.innerHTML = `Phone: ${people.phone}`
+        const webSite = document.createElement("li")
+        webSite.innerHTML = `Website: ${people.website}`
+        const image = document.createElement("img")
+        image.src = "https://picsum.photos/200/300"
+        image.height = "175"
+        image.width = "175"
+        const email = document.createElement("li")
+        email.innerHTML = `Email: ${people.email}`
+        personInfo.append(birthday,phoneNumber,webSite,email)
+        personCard.append(image,personName,personInfo)
+        cardContainer.append(personCard)
+    }
+}
+// Button click for people
+const peopleButton = document.querySelector("#button1")
+peopleButton.addEventListener('click', function(){
+    getPeople();
+})
+// Fetch users function
+const getUsers = async () => {
+    if (cardContainer!=""){
+        cardContainer.innerHTML= ""
+    }
+    const users = await fetch ("https://fakerapi.it/api/v1/users?_quantity=30")
+    const usersJson = await users.json()
+    console.log(usersJson)
+    for (let user of usersJson.data){
+        const userCard = document.createElement("div")
+        userCard.className = "users"
+        const name = document.createElement("h3")
+        name.innerHTML = `Username: ${user.username}`
+        const list = document.createElement("ul")
+        const ip = document.createElement("li")
+        ip.innerHTML = `IP: ${user.ip}`
+        const address = document.createElement("li")
+        address.innerHTML = `MacAddress: ${user.macAddress}`
+        const password = document.createElement("li")
+        password.innerHTML=`Password: ${user.password}`
+        list.append(ip,address,password)
+        userCard.append(name,list)
+        cardContainer.append(userCard)
+    }
+
+}
+
+const userButton = document.querySelector("#button2")
+userButton.addEventListener('click', function(){
+    getUsers();
+})

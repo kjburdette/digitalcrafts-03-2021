@@ -1,0 +1,87 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.cardContainer {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.people {
+  text-align: center;
+  align-items: center;
+  padding: 10px;
+  margin: 10px;
+  justify-content: center;
+  border-radius: 1.5em;
+  background-color: #738fa7;
+  border: solid black 2px;
+  display: flex;
+  flex-direction: column;
+}
+
+.users {
+  text-align: center;
+  align-items: center;
+  padding: 15px;
+  margin: 8px;
+  justify-content: center;
+  border-radius: 1.5em;
+  background-color: #738fa7;
+  border: solid black 2px;
+  display: flex;
+  flex-direction: column;
+}
+
+.people:hover,
+button:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.719);
+}
+
+button:focus {
+  outline: none;
+}
+
+h1 {
+  font-size: 80px;
+}
+
+h3 {
+  text-decoration: underline;
+  margin-bottom: 0px;
+}
+
+ul {
+  list-style-type: none;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+img {
+  border-radius: 10em;
+}
+
+body {
+  background: url("https://images.unsplash.com/photo-1557683304-673a23048d34?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTl8fGJhY2tncm91bmR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60")
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: "Play", sans-serif;
+}
+
+button {
+  font-size: 30px;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 0.5em;
+  width: 150px;
+  font-family: "Play", sans-serif;
+  background-color: #b7cfdc;
+}
