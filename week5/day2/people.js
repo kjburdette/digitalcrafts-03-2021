@@ -20,8 +20,8 @@ const getPeople = async () => {
         phoneNumber.innerHTML = `Phone: ${people.phone}`
         const image = document.createElement("img")
         image.src = people.picture.large
-        image.height = "200"
-        image.width = "200"
+        image.height = "225"
+        image.width = "225"
         const email = document.createElement("li")
         email.innerHTML = `Email: ${people.email}`
         personInfo.append(birthday,phoneNumber,email)
