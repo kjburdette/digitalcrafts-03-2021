@@ -1,10 +1,10 @@
 const cardContainer = document.querySelector(".cardContainer")
 // Fetch people function
 const getPeople = async () => {
-    if (cardContainer!=""){
+    if (cardContainer.length!=0){
         cardContainer.innerHTML= ""
     }
-    const peopleData = await fetch ("https://randomuser.me/api/?results=30&nat=us")
+    const peopleData = await fetch ("https://randomuser.me/api/?results=30&nat=us&")
     const formattedPeople = await peopleData.json()
     console.log(formattedPeople)
     for (let people of formattedPeople.results){
