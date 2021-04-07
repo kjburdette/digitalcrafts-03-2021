@@ -22,8 +22,9 @@ const getPeople = async () => {
         image.src = people.picture.large
         image.height = "225"
         image.width = "225"
-        const email = document.createElement("li")
-        email.innerHTML = `Email: ${people.email}`
+        const email = document.createElement("i")
+        email.innerHTML = `: ${people.email}`
+        email.className = "far fa-envelope"
         personInfo.append(birthday,phoneNumber,email)
         personCard.append(image,personName,personInfo)
         cardContainer.append(personCard)
@@ -64,3 +65,4 @@ const userButton = document.querySelector("#button2")
 userButton.addEventListener('click', function(){
     getUsers();
 })
+
