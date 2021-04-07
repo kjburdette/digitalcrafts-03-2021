@@ -4,29 +4,29 @@ const getPeople = async () => {
     if (cardContainer!=""){
         cardContainer.innerHTML= ""
     }
-    const peopleData = await fetch ("https://fakerapi.it/api/v1/persons?_quantity=30")
+    const peopleData = await fetch ("https://randomuser.me/api/?results=30&nat=us")
     const formattedPeople = await peopleData.json()
     console.log(formattedPeople)
-    for (let people of formattedPeople.data){
+    for (let people of formattedPeople.results){
         const personCard = document.createElement("div");
         personCard.className = "people"
         const personName = document.createElement("h3")
-        const personFullName = `${people.firstname} ${people.lastname}`
+        const personFullName = `${people.name.first} ${people.name.last}`
         personName.innerHTML = personFullName
         const personInfo = document.createElement("ul")
         const birthday = document.createElement("li")
-        birthday.innerHTML = `Birthday: ${people.birthday}`
+        birthday.innerHTML = `Age: ${people.dob.age}`
         const phoneNumber = document.createElement("li")
         phoneNumber.innerHTML = `Phone: ${people.phone}`
-        const webSite = document.createElement("li")
-        webSite.innerHTML = `Website: ${people.website}`
+        // const webSite = document.createElement("li")
+        // webSite.innerHTML = `Website: ${people.website}`
         const image = document.createElement("img")
-        image.src = "https://picsum.photos/200/300"
+        image.src = people.picture.large
         image.height = "175"
         image.width = "175"
         const email = document.createElement("li")
         email.innerHTML = `Email: ${people.email}`
-        personInfo.append(birthday,phoneNumber,webSite,email)
+        personInfo.append(birthday,phoneNumber,email)
         personCard.append(image,personName,personInfo)
         cardContainer.append(personCard)
     }

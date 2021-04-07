@@ -22,7 +22,7 @@
   border: solid black 2px;
   display: flex;
   flex-direction: column;
-  width: 15%;
+  width: 12%;
   /* height: 15%; */
   padding: 20px;
 }
@@ -43,7 +43,8 @@
 }
 
 .people:hover,
-button:hover {
+button:hover,
+.users:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.719);
 }
 
@@ -67,7 +68,8 @@ ul {
 }
 
 img {
-  border-radius: 5em;
+  border-radius: 0.8em;
+  border: solid black 2px;
 }
 
 body {
