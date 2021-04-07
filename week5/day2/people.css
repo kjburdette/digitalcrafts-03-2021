@@ -15,7 +15,6 @@
 .people {
   text-align: center;
   align-items: center;
-  padding: 10px;
   margin: 10px;
   justify-content: center;
   border-radius: 1.5em;
@@ -23,19 +22,24 @@
   border: solid black 2px;
   display: flex;
   flex-direction: column;
+  width: 15%;
+  /* height: 15%; */
+  padding: 20px;
 }
 
 .users {
   text-align: center;
   align-items: center;
   padding: 15px;
-  margin: 8px;
+  margin: 10px 10px;
   justify-content: center;
   border-radius: 1.5em;
   background-color: #738fa7;
   border: solid black 2px;
   display: flex;
   flex-direction: column;
+  width: 15%;
+  height: 30%;
 }
 
 .people:hover,
@@ -63,7 +67,7 @@ ul {
 }
 
 img {
-  border-radius: 10em;
+  border-radius: 5em;
 }
 
 body {
@@ -84,4 +88,5 @@ button {
   width: 150px;
   font-family: "Play", sans-serif;
   background-color: #b7cfdc;
+  border: solid black 2px;
 }
