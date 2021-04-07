@@ -18,12 +18,10 @@ const getPeople = async () => {
         birthday.innerHTML = `Age: ${people.dob.age}`
         const phoneNumber = document.createElement("li")
         phoneNumber.innerHTML = `Phone: ${people.phone}`
-        // const webSite = document.createElement("li")
-        // webSite.innerHTML = `Website: ${people.website}`
         const image = document.createElement("img")
         image.src = people.picture.large
-        image.height = "175"
-        image.width = "175"
+        image.height = "200"
+        image.width = "200"
         const email = document.createElement("li")
         email.innerHTML = `Email: ${people.email}`
         personInfo.append(birthday,phoneNumber,email)
@@ -31,7 +29,7 @@ const getPeople = async () => {
         cardContainer.append(personCard)
     }
 }
-// Button click for people
+// Button click to search people
 const peopleButton = document.querySelector("#button1")
 peopleButton.addEventListener('click', function(){
     getPeople();
@@ -43,7 +41,6 @@ const getUsers = async () => {
     }
     const users = await fetch ("https://fakerapi.it/api/v1/users?_quantity=30")
     const usersJson = await users.json()
-    console.log(usersJson)
     for (let user of usersJson.data){
         const userCard = document.createElement("div")
         userCard.className = "users"
@@ -62,7 +59,7 @@ const getUsers = async () => {
     }
 
 }
-
+// Button click to search users
 const userButton = document.querySelector("#button2")
 userButton.addEventListener('click', function(){
     getUsers();
