@@ -1,8 +1,11 @@
 const expresss = require("express");
 const app = expresss();
-const {readFile} = require("fs")
+const {readFile, read} = require("fs")
 
 const port = 3001;
+
+// middleware
+// app.use(express.json())
 
 // routes
 // 1 Default page aka /
@@ -25,12 +28,19 @@ app.get("/home", (req,res) => {
 
 app.get("/about", (req,res) => {
     const message = "Welcome to my about"
-    res.send(message);
-})
+    readFile("./about.html", "utf8", (err,html) => {
+        res.send(html)
+    })
+    // res.send(message)
+    })
+
 
 app.get("/faq", (req,res) => {
     const message = "Welcome to my FAQ"
-    res.send(message);
+    readFile("./faq.html", "utf8", (err,html) => {
+        res.send(html)
+    })
+    // res.send(message);
 })
 
 app.post("/messages", (req,res) => {
