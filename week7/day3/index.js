@@ -52,8 +52,30 @@ app.get("/read_todos/:id", async (req,res) => {
 })
 
 // update the todo item on todolist
+app.put("/update_todos/:id", async (req,res) => {
+    try{
+        const {id} = req.params;
+        const {description} = req.body;
+        const updateTodoInDB = await pool.query("UPDATE todo SET description = $1 WHERE todo_id = $2", [description, id]);
+    
+        res.json("Updated the todos!")
+
+    }catch (err){
+        console.error(err);
+    }
+})
 
 // delete the todo
+app.delete("/delete_todo/:id", async (req,res) => {
+    try{
+        const {id} = req.params;
+        const deleteTodoInDB = await pool.query("DELETE FROM todo WHERE todo_id = $1", [id]);
+        res.json("Todo was successfuly deleted!")
+
+    }catch (err){
+        console.error(err.message)
+    }
+})
 
 
 app.listen(port, () => {
