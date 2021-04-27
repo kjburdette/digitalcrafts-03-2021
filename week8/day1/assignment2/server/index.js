@@ -19,11 +19,11 @@ app.get("/", (req,res) => {
 
 // create todo
 app.post("/todo", async (req,res) => {
+    const {description} = req.body;
     try {
-        const {description} = req.body;
         const newTodoInDB = await pool.query("INSERT INTO todo (description) VALUES($1)", [description]);
         console.log(req.body);
-        res.json(newTodoInDB);
+        res.status(200).send("todo was sent");
     } catch (err) {
         console.log(err.message)
     }
@@ -31,14 +31,13 @@ app.post("/todo", async (req,res) => {
 
 // read the todo list
 app.get("/read_todos", async (req,res) => {
-    try{
-        const todolist = await pool.query("Select * from todo").then((data) => {
-         console.log(data)
-        })
-
-    }catch (err){
-        console.log(err.message)
-    }
+    const todolist = await pool.query("Select * from todo")
+    // console.log(todolist.rows)
+    res.render("viewlist", {
+        locals: {
+            todos: todolist.rows,
+        }
+    })
 });
         
 
@@ -46,9 +45,14 @@ app.get("/read_todos", async (req,res) => {
 // read a single todo
 app.get("/read_todos/:id", async (req,res) => {
     try {
+        const todolist = await pool.query("Select * from todo")
         const {id} = req.params;
        const readSingleTodoFromDB = await pool.query("Select * from todo WHERE todo_id = ($1)", [id]);
-       res.json(readSingleTodoFromDB)
+       res.render("todo", {
+           locals: {
+               todos: todolist.rows,
+           }
+       })
     } catch (err) {
         console.log(err.message)
     }

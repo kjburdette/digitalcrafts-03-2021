@@ -9,8 +9,23 @@
 <body>
     <h1>Welcome to Todo List Home Page!</h1>
     <p>Type a todo you need completed:</p>
-    <input type="text">
-    <button>Submit</button>
+    <input class="user_input" type="text">
+    <button onclick="sendDatabToDB()">Submit</button>
     <a href="../read_todos">View Todo List</a>
 </body>
+<script>
+        const sendDatabToDB = async ()=> {
+        const userInput = document.querySelector(".user_input").value
+        const sendTheData = await fetch("http://localhost:3002/todo", 
+        {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body:  JSON.stringify({description:userInput})
+        })
+        
+
+    }
+</script>
 </html>

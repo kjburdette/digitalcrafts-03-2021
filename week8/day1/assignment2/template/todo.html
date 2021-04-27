@@ -4,15 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Todo List</title>
+    <title>Single Todo</title>
 </head>
 <body>
-    <h1>Todo List</h1>
-    ${todos.map (todo => `
-        <li>
-            <a href="../read_todos/${todo.todo_id}">${todo.description}</a>
-        </li>
-    `).join("")}
-
+    <h1>Single Todo</h1>
+    ${todos.description}
+    <button onclick="removeFromDB()">Completed</button>
 </body>
+<script></script>
 </html>
