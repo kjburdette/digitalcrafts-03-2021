@@ -1,0 +1,30 @@
+.App {
+  height: 800px;
+  width: 700px;
+  background-color: cadetblue;
+}
+
+.Sidebar,
+.AboutMe,
+.Nav {
+  height: 100px;
+  width: 100px;
+}
+
+.Sidebar {
+  background-color: cornflowerblue;
+}
+
+.AboutContainer {
+  background-color: darkgoldenrod;
+  height: 200px;
+  width: 200px;
+}
+
+.AboutMe {
+  background-color: darkmagenta;
+}
+
+.Nav {
+  background-color: hotpink;
+}
