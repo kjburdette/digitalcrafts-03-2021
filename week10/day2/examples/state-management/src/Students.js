@@ -1,11 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-export default class Students extends Component {
-    render() {
-        return (
-            <div>
-                <p>{this.props.name}: is my student</p>
-            </div>
-        )
-    }
+class Students extends Component {
+  render() {
+    const { name, state, photo } = this.props.student;
+    console.log(this.props);
+    return (
+      <div>
+        <p>{name}: is my student</p>
+        <p>{state}: is my state</p>
+        {photo && <img src={photo} alt="" style={{ borderRadius: "50%" }} />}
+      </div>
+    );
+  }
 }
+
+export default Students;
