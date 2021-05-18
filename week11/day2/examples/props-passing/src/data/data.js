@@ -2,6 +2,16 @@ export const data = [
     {
       pokemon: [
         {
+            id: 1,
+            name: "bulbasaur",
+            hp: 45,
+            sprites: {
+              front:
+                "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+              back: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png",
+            },
+          },
+        {
           id: 2,
           name: "ivysaur",
           hp: 60,
@@ -1491,6 +1501,16 @@ export const data = [
             back: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/150.png",
           },
         },
+        {
+            id: 151,
+            name: "mew",
+            hp: 100,
+            sprites: {
+              front:
+                "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png",
+              back: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/151.png",
+            },
+          },
       ],
     },
   ];
