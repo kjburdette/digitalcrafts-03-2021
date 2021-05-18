@@ -48,3 +48,7 @@
   background-color: darkblue;
   color: yellow;
 }
+
+input:focus {
+  outline: none;
+}
