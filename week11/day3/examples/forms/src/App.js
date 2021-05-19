@@ -1,9 +1,12 @@
-import './App.css';
-
+import "./App.css";
+import Form from "./components/Form";
+import CarlosForm from "./components/CarlosForm";
 function App() {
   return (
     <div className="App">
-      <h1>Forms React</h1>
+      {/* Uncomment out form to see the new bigger shipping form */}
+      {/* <Form /> */}
+      <CarlosForm />
     </div>
   );
 }
