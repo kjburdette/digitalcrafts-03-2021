@@ -10,11 +10,21 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
+  background-image: url(C:\Users\Kendall\Desktop\digitalcrafts\week12\day1\assignments\movie-app\src\components\images\jc-gellidon-qGbo4o77NaM-unsplash.jpg);
 }
 
 .MovieContainer {
-  background-color: brown;
-  /* height: 80vh;
+  /* background-color: brown; */
+}
+
+.SecondContainer {
   display: flex;
-  flex-direction: column; */
+  flex-direction: revert;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 20;
+}
+
+.Poster {
+  padding: 20px;
 }
