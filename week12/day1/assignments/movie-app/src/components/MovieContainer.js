@@ -3,13 +3,7 @@ import Movie from './Movie'
 
 export default function MovieContainer() {
     const [movies, setMovies] = useState([]);
-    const [title, setTitle] = useState("");
-    const [image, setImage] = useState("");
-    const [rating, setRating] = useState("");
-    const [plot, setPlot] = useState("");
     const [userInput, setUserInput] = useState("");
-
-
 
     const getMovies = async () => {
         const response = await fetch(`http://www.omdbapi.com/?s=${userInput}&apikey=d77ac2f5`, {
@@ -20,8 +14,6 @@ export default function MovieContainer() {
         setMovies(parsedData.Search)
     }
 
-    // getMovies();
-    
     return (
         <div className="MovieContainer">
             <h1>Movie Container</h1>
