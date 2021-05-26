@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Movie from './Movie'
 import api_key from '../Secret';
 
 export default function MovieContainer() {
     const [movies, setMovies] = useState([]);
     const [userInput, setUserInput] = useState("");
-    // const API_KEY = process.env.REACT_APP_MOVIE_API_KEY
     const API = api_key
 
     const getMovies = async () => {
@@ -13,10 +12,8 @@ export default function MovieContainer() {
             headers: { Accept: "application/json"},
         })
         const parsedData = await response.json();
-        console.log(parsedData)
         setMovies(parsedData.Search)
     }
-    console.log(API)
     return (
         <div className="MovieContainer">
             <h1>Movie Container</h1>
