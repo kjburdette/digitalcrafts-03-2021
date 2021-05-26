@@ -10,7 +10,23 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
-  background-image: url(C:\Users\Kendall\Desktop\digitalcrafts\week12\day1\assignments\movie-app\src\components\images\jc-gellidon-qGbo4o77NaM-unsplash.jpg);
+  background: url(C:\Users\Kendall\Desktop\digitalcrafts\week12\day1\assignments\movie-app\src\components\images\gr-stocks-q8P8YoR6erg-unsplash.jpg)
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+input,
+button {
+  border-radius: 0.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+input:focus {
+  outline: none;
 }
 
 .MovieContainer {
